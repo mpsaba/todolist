@@ -18,10 +18,6 @@ module.exports = {
 
     new: function (req, res) {
 
-        if (global.currentUser) {
-            req.body["userId"] = global.currentUser.id;
-        }
-
         var params = this.checkRequiredFields(req, ["title", "description", "userId"]);
         if (params.error == false) {
             global.toDoList.push({
@@ -125,6 +121,10 @@ module.exports = {
 
     checkRequiredFields: function (req, reqFields) {
 
+        if (global.currentUser) {
+            req.body["userId"] = global.currentUser.id;
+        }
+        
         var params = {};
         var missingField = [];
 
