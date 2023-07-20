@@ -61,8 +61,6 @@ module.exports = {
                         }
                     });
 
-                    console.log(oldItem[0]);
-
                     global.toDoList.push(oldItem[0]);
 
                     res.json({
@@ -124,7 +122,7 @@ module.exports = {
         if (global.currentUser) {
             req.body["userId"] = global.currentUser.id;
         }
-        
+
         var params = {};
         var missingField = [];
 
