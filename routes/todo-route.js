@@ -10,7 +10,7 @@ router.post('/new', function (req, res) {
     controller.new(req, res);
 });
 
-router.get('/update', function (req, res) {
+router.post('/update', function (req, res) {
     controller.update(req, res);
 });
 
